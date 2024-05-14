@@ -1,36 +1,257 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Carattere&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&display=swap');
+
+.content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    width: 100%;
+    max-width: 600px; /* Control the max width for better display on larger screens */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align content at the start */
+    min-height: 100vh;
+    background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #f9f9f9;  
+    letter-spacing: 2px;
+    box-sizing: border-box;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    padding-bottom: 80px; /* Prevent content from being hidden behind footer */
 }
   
-canvas {
-    border: 1px solid #ccc;
-    cursor: pointer;
-}
-  
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-  
-button:hover {
-    background-color: #0056b3;
-}
-  
-#quote {
-    margin-top: 20px;
-    font-size: 1.2em;
+.h1 {
+    margin-top: 20px; /* Adjust spacing as needed */
+    margin-bottom: 40px; /* Adjust spacing as needed */
+    font-size: 34px; /* Adjust size as needed */
     text-align: center;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.emoji {
+    height: 50px; /* Adjust size as needed */
+    margin-bottom: 20px; /* Space between emoji and heading */
+    margin-top: 15px;
+}
+
+  
+#card {
+    width: 90%; /* Adjust width to not exceed the viewport width */
+    max-width: 500px; /* Maximum width of the card */
+    height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* Make sure the background doesn't block the quote */
+    margin-bottom: 20px;
+}
+
+#scratchPad {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Ensure the canvas is above the quote */
+    border-radius: 30px;
+    touch-action: none;
+}
+
+#quote {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* Make sure it's slightly less than the total width of the card */
+    padding: 10px; /* Add some padding around the text */
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1; /* Below the canvas */
+    white-space: normal; /* Ensure text wraps */
+    line-height: 1.5; /* Adjust line height for better readability */
+    overflow-wrap: break-word; /* Ensure long words do not overflow */
+}
+
+#scratchAgain {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    color: #041531e7;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
 }
   
+#card,
+#scratchPad,
+#quote {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+@media (max-width: 600px) {
+    .h1 {
+        font-size: 18px;
+        margin-bottom: 50px; /* Reduced space on small devices */
+    }
+
+    .emoji {
+        height: 40px; /* Smaller emoji on mobile */
+    }
+
+    #card {
+        height: 200px; /* Smaller card on mobile */
+        margin-bottom: 50px;
+    }
+
+    #quote {
+        font-size: 16px; /* Smaller text on mobile */
+    }
+
+    #scratchAgain {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/*------------------share icon----------------*/
+/* Share Button Styles */
+
+.footer-left{
+    margin-right: 30px;
+}
+.btn_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    width: 240px;
+    height: 72px;
+    background: whitesmoke;
+    border-radius: 10px;
+    margin: 20px 40px 20px 0; /* Centered and margin for spacing */
+    transition: all .2s ease-in-out;
+}
+
+.btn_wrap:hover {
+    transform: scale(1.1);
+}
+
+.btn_wrap span {
+    position: absolute;
+    z-index: 2;  /* Ensure the label is above icons */
+    width: 100%;
+    height: 72px;
+    border-radius: 10px;
+    font-size: 30px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    line-height: 70px;
+    letter-spacing: 1px;
+    color: #000000;
+    background: radial-gradient(328px at 2.9% 15%, rgb(191, 224, 251) 0%, rgb(232, 233, 251) 25.8%, rgb(252, 239, 250) 50.8%, rgb(234, 251, 251) 77.6%, rgb(240, 251, 244) 100.7%);
+    transition: all 1.2s ease;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 64px;
+    border-radius: 20px;
+}
+
+.container i {
+    opacity: 0;
+    font-size: 28px;
+    color: #1F1E1E;
+    transform: scale(.1);
+    transition: all .3s ease 0.3s;  /* Added transition delay */
+}
+
+.container .fa-copy {
+    cursor: pointer;
+}
+
+.btn_wrap:hover .container i {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.btn_wrap:hover span {
+    transform: translateX(-280px);
+}
+
+footer {
+    display: flex;
+    justify-content: center; /* Center the items */
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(109.6deg, rgb(20, 30, 48) 11.2%, rgb(36, 59, 85) 91.1%);
+    border-width: 2px;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box; /* Ensure no space appears at the bottom */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%; /* Control the width of the footer content */
+    max-width: 1200px; /* Max width for large screens */
+}
+
+.footer-left,
+.footer-right {
+    display: flex;
+    align-items: center;
+}
+
+.footer-social { 
+    text-align: right;
+}
+
+.footer-social ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-social li {
+    margin: 0 10px;
+}
+
+.footer-social li a img {
+    width: 30px;
+    height: 30px;
+}
