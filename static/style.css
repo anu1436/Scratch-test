@@ -188,7 +188,7 @@ footer {
     cursor: pointer;
     width: 240px;
     height: 72px;
-    background: whitesmoke;
+    background: #400000;
     border-radius: 10px;
     margin: 20px 40px 20px 0;
     transition: all .2s ease-in-out;
