@@ -171,11 +171,11 @@ footer {
     font-size: 28px;
     color: #1F1E1E;
     transform: scale(1);  /* Ensure they are scaled to normal size */
-    transition: all .3s ease;  /* Adjust transition for hover effect */
+    transition: opacity 0.3s ease, transform 0.3s ease;  /* Adjust transition for hover effect */
 }
 
 .btn_wrap:hover .container i {
-    opacity: 1;  /* Maintain full opacity on hover */
+    
     transform: scale(1.1);  /* Slightly increase scale on hover if desired */
 }
 
