@@ -22,6 +22,18 @@ body {
     max-width: 600px;
 }
 
+#card {
+    width: 90%;
+    max-width: 300px;
+    height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    margin-bottom: 20px;
+}
+
 canvas {
     border: 1px solid #ccc;
     cursor: pointer;
@@ -29,13 +41,19 @@ canvas {
 
 #scratchPad {
     width: 100%;
-    height: 300px;
+    height: 100%;
     background-color: #f0f0f0;
 }
 
 #quote {
-    margin-top: 20px;
-    font-size: 1.2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
     text-align: center;
     z-index: 1;
     white-space: normal;
@@ -134,7 +152,7 @@ footer {
     text-align: center;
     line-height: 70px;
     letter-spacing: 1px;
-    color: #000000;
+    color: #303030;
     background: radial-gradient(328px at 2.9% 15%, rgb(191, 224, 251) 0%, rgb(232, 233, 251) 25.8%, rgb(252, 239, 250) 50.8%, rgb(234, 251, 251) 77.6%, rgb(240, 251, 244) 100.7%);
     transition: all 1.2s ease;
 }
@@ -148,17 +166,53 @@ footer {
     border-radius: 20px;
 }
 
-.container i {
-    opacity: 0;
-    font-size: 28px;
-    color: #1F1E1E;
-    transform: scale(.1);
-    transition: all .3s ease 0.3s;
+/* Styling for the social media icons */
+.container img {
+    width: 28px;  /* Adjust the size as needed */
+    height: 28px;  /* Ensure the icons are square or adjust based on your image aspect ratio */
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-.btn_wrap:hover .container i {
-    opacity: 1;
-    transform: scale(1);
+.container img:hover {
+    transform: scale(1.1);  /* Scale icons slightly on hover for better interaction feedback */
+}
+
+/* Adjusting the share button wrapping to accommodate images */
+.btn_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    width: 240px;
+    height: 72px;
+    background: #400000;
+    border-radius: 10px;
+    margin: 20px 40px 20px 0;
+    transition: all .2s ease-in-out;
+}
+
+.btn_wrap:hover {
+    transform: scale(1.1);
+}
+
+.btn_wrap span {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 72px;
+    border-radius: 10px;
+    font-size: 30px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    line-height: 70px;
+    letter-spacing: 1px;
+    color: #303030;
+    background: radial-gradient(328px at 2.9% 15%, rgb(191, 224, 251) 0%, rgb(232, 233, 251) 25.8%, rgb(252, 239, 250) 50.8%, rgb(234, 251, 251) 77.6%, rgb(240, 251, 244) 100.7%);
+    transition: all 1.2s ease;
 }
 
 .btn_wrap:hover span {
@@ -170,12 +224,13 @@ footer {
         max-width: 100%;
     }
 
-    canvas {
+    #card {
+        max-width: 100%;
         height: 200px;
     }
 
     #quote {
-        font-size: 1em;
+        font-size: 14px;
     }
 
     #scratchAgain {

@@ -9,22 +9,25 @@
   <meta property="og:url" content="https://anu1436.github.io/Scratch-test">
   <link rel="stylesheet" href="static/style.css">
   <title>Scratch and Reveal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
   <div class="content">
-    <canvas id="scratchPad"></canvas>
+    <div id="card">
+      <canvas id="scratchPad"></canvas>
+      <p id="quote"></p>
+    </div>
     <button id="scratchAgain" style="display: none;">Scratch Again</button>
-    <p id="quote"></p>
   </div>
   <footer>
     <div class="footer-left">
         <div class="btn_wrap">
             <span>Share</span>
             <div class="container">
-                <i class="fas fa-copy" onclick="copyToClipboard()"></i>
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-whatsapp"></i>
+                <i class="fa fa-clipboard" aria-hidden="true" onclick="copyToClipboard()"></i>
+                <img src="/static/images/facebook.png" alt="Facebook"> <!-- Facebook Icon -->
+                <img src="/static/images/instagram.png" alt="Instagram"> <!-- Instagram Icon -->
+                <img src="/static/images/twitter.png" alt="Twitter"> <!-- WhatsApp Icon -->
             </div>
         </div>
     </div>
@@ -32,14 +35,13 @@
         <div class="footer-social">
             <h2>Follow us on</h2>
             <ul>
-                <li><a href="https://www.instagram.com/scratch_a_quote/"><img src='/static/images/Instagram.svg' /></a></li>
-                <li><a href= "http://www.youtube.com/scratch_a_quote/"><img src='/static/images/Youtube.svg'></a></li>
-                <li><a href="http://www.facebook.com"><img src='/static/images/facebook.svg'/></a></li>    	  
+                <li><a href="https://www.instagram.com/scratch_a_quote/"><img src="/static/images/instagram.png"></a></li>
+                <li><a href= "http://www.youtube.com/scratch_a_quote/"><img src="/static/images/Youtube.svg"></a></li>
+                <li><a href="http://www.facebook.com"><img src="/static/images/facebook.png"></a></li>    	  
             </ul>
         </div>
     </div>
   </footer>
   <script src="static/script.js"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Include FontAwesome for icons -->
 </body>
 </html>
