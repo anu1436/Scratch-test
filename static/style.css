@@ -167,17 +167,18 @@ footer {
 }
 
 .container i {
-    opacity: 0;
+    opacity: 1;  /* Set opacity to 1 for them to be always visible */
     font-size: 28px;
-    color: #101010;
-    transform: scale(.1);
-    transition: all .3s ease 0.3s;
+    color: #1F1E1E;
+    transform: scale(1);  /* Ensure they are scaled to normal size */
+    transition: all .3s ease;  /* Adjust transition for hover effect */
 }
 
 .btn_wrap:hover .container i {
-    opacity: 1;
-    transform: scale(1);
+    opacity: 1;  /* Maintain full opacity on hover */
+    transform: scale(1.1);  /* Slightly increase scale on hover if desired */
 }
+
 
 .btn_wrap:hover span {
     transform: translateX(-280px);
