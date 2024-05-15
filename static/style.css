@@ -166,19 +166,54 @@ footer {
     border-radius: 20px;
 }
 
-.container i {
-    opacity: 1;  /* Set opacity to 1 for them to be always visible */
-    font-size: 28px;
-    color: #1F1E1E;
-    transform: scale(1);  /* Ensure they are scaled to normal size */
-    transition: opacity 0.3s ease, transform 0.3s ease;  /* Adjust transition for hover effect */
+/* Styling for the social media icons */
+.container img {
+    width: 28px;  /* Adjust the size as needed */
+    height: 28px;  /* Ensure the icons are square or adjust based on your image aspect ratio */
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-.btn_wrap:hover .container i {
-    
-    transform: scale(1.1);  /* Slightly increase scale on hover if desired */
+.container img:hover {
+    transform: scale(1.1);  /* Scale icons slightly on hover for better interaction feedback */
 }
 
+/* Adjusting the share button wrapping to accommodate images */
+.btn_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    width: 240px;
+    height: 72px;
+    background: whitesmoke;
+    border-radius: 10px;
+    margin: 20px 40px 20px 0;
+    transition: all .2s ease-in-out;
+}
+
+.btn_wrap:hover {
+    transform: scale(1.1);
+}
+
+.btn_wrap span {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 72px;
+    border-radius: 10px;
+    font-size: 30px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    line-height: 70px;
+    letter-spacing: 1px;
+    color: #303030;
+    background: radial-gradient(328px at 2.9% 15%, rgb(191, 224, 251) 0%, rgb(232, 233, 251) 25.8%, rgb(252, 239, 250) 50.8%, rgb(234, 251, 251) 77.6%, rgb(240, 251, 244) 100.7%);
+    transition: all 1.2s ease;
+}
 
 .btn_wrap:hover span {
     transform: translateX(-280px);
