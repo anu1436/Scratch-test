@@ -27,6 +27,19 @@ canvas {
     cursor: pointer;
 }
 
+  
+#card {
+    width: 90%; /* Adjust width to not exceed the viewport width */
+    max-width: 500px; /* Maximum width of the card */
+    height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* Make sure the background doesn't block the quote */
+    margin-bottom: 20px;
+} 
+
 #scratchPad {
     width: 100%;
     height: 300px;
