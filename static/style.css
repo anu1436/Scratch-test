@@ -21,28 +21,39 @@ body {
     width: 100%;
     max-width: 600px;
 }
- 
+
 #card {
-    width: 90%; /* Adjust width to not exceed the viewport width */
-    max-width: 500px; /* Maximum width of the card */
-    height: 300px;
+    width: 90%;
+    max-width: 300px;
+    height: 200px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent; /* Make sure the background doesn't block the quote */
+    background-color: transparent;
     margin-bottom: 20px;
-} 
+}
+
+canvas {
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
 
 #scratchPad {
     width: 100%;
-    height: 300px;
+    height: 100%;
     background-color: #f0f0f0;
 }
 
 #quote {
-    margin-top: 20px;
-    font-size: 1.2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
     text-align: center;
     z-index: 1;
     white-space: normal;
@@ -177,12 +188,13 @@ footer {
         max-width: 100%;
     }
 
-    canvas {
-        height: 200px;
+    #card {
+        max-width: 100%;
+        height: 150px;
     }
 
     #quote {
-        font-size: 1em;
+        font-size: 14px;
     }
 
     #scratchAgain {
