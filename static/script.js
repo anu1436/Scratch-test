@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function fetchQuote() {
-      const url = 'quotes1.json';  // URL to your static JSON file
+      const url = 'quotes11.json';  // URL to your static JSON file
       fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -83,5 +83,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
   
-});
+  });
   
